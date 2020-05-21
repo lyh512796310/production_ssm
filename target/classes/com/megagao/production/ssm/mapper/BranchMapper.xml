@@ -4,4 +4,44 @@
  	<select id="find"  resultType="Branch">
  		select * from t_branch
  	</select>
+ 	
+ 	<select id="getBranchById" resultType="Branch" parameterType="String">
+ 		select * from t_branch where id =#{id}
+ 	</select>
+ 	
+ 	<insert id="add" parameterType="Branch">
+  			insert into t_branch (id,name,short_name)values(#{id},#{name},#{short_name})
+  	</insert>
+  	
+  		<!-- 批量删除 -->
+	<delete id="deleteBatch">
+		DELETE
+		FROM
+			t_branch
+		WHERE
+			id IN
+		<foreach collection="array" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+	
+	 <update id="updateByPrimaryKeySelective" parameterType="com.megagao.production.ssm.domain.Branch" >
+    update t_branch
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="short_name != null" >
+        short_name = #{short_name,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.megagao.production.ssm.domain.Branch" >
+    update t_branch
+    set name = #{name,jdbcType=VARCHAR},
+      short_name = #{short_name,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
 </mapper>

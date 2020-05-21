@@ -41,6 +41,7 @@ public class UserController {
 	
 	@RequestMapping("/add")
 	public String add() throws Exception{
+		System.out.println("用户添加");
 		return "user_add";
 	}
 	

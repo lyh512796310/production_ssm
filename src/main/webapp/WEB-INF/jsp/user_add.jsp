@@ -3,6 +3,7 @@
 
 <link href="css/uploadfile.css" rel="stylesheet"> 
 <script src="js/jquery.uploadfile.js"></script>
+<script src="js/malsup.github.iojquery.form.js"></script>
 
 <script type="text/javascript" charset="utf-8" src="js/kindeditor-4.1.10/kindeditor-all-min.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>

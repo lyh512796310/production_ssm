@@ -64,7 +64,12 @@
 		</div>
 	</div>
 </div>
-
+<div id="branchEditWindow" class="easyui-window" title="编辑机构" data-options="modal:true,closed:true,resizable:true,
+	iconCls:'icon-save',href:'branch/edit'" style="width:45%;height:60%;padding:10px;">
+</div>
+<div id="branchAddWindow" class="easyui-window" title="添加机构" data-options="modal:true,closed:true,resizable:true,
+	iconCls:'icon-save',href:'branch/add'" style="width:45%;height:60%;padding:10px;">
+</div>
 <script>
 	function doSearch_branch(value, name) { //用户输入用户名,点击搜素,触发此函数  
 		if (value == null || value == '') {
@@ -169,7 +174,7 @@
 	       			var ids = getBranchSelectionsIds();
 	               	
 	               	if(ids.length == 0){
-	               		$.messager.alert('提示','必须选择一个=机构哦才能编辑!');
+	               		$.messager.alert('提示','必须选择一个机构哦才能编辑!');
 	               		return ;
 	               	}
 	               	if(ids.indexOf(',') > 0){
@@ -183,7 +188,7 @@
 	               			var data = $("#branchList").datagrid("getSelections")[0];
 	               			
 	               			$("#branchEditForm").form("load", data);
-	               			branchEditEditor.html(data.note);
+	               			/* branchEditEditor.html(data.note); */
 	               			
 	               			TAOTAO.init({
 	               				"pics" : data.image,
@@ -202,7 +207,7 @@
 	      			$.messager.alert('提示', data.msg);
 	      		}else{
 	      			var ids = getBranchSelectionsIds();
-	              	if(ids.length == 0){
+	              	if(ids.length == 0){   
 	              		$.messager.alert('提示','未选中机构!');
 	              		return ;
 	              	}
