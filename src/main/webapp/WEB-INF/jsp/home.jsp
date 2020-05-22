@@ -170,6 +170,23 @@
 			</ul>
 		</div>
 		
+		<div title="培训管理" data-options="selected:true" style="padding:10px">
+			<ul id="cultivateManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>培训管理</span>
+					<ul>
+						<li id=64 data-options="attributes:{'url':'cultivate/find'}">培训管理</li>
+					</ul>
+					<ul>
+						<li id=65 data-options="attributes:{'url':'cultivate_exam/find'}">培训考核管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		
+		
+		
 		<c:if test="${activeUser.rolename == '超级管理员' }">
 			<div title="系统管理" style="padding:10px;">
 	
@@ -314,6 +331,26 @@
 							tabs2.tabs("select", node.text);
 						} else {
 							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			
+			/* cultivate Manager Tree onClick Event */
+			$('#cultivateManager').tree({
+				onClick : function(node) {
+					if ($('#cultivateManager').tree("isLeaf", node.target)) {
+						var tabs1 = $("#tabs");
+						var tab1 = tabs1.tabs("getTab", node.text);
+						if (tab1) {
+							tabs1.tabs("select", node.text);
+						} else {
+							tabs1.tabs('add', {
 								title : node.text,
 								href : node.attributes.url,
 								closable : true,
