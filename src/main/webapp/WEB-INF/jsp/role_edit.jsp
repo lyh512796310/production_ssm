@@ -159,6 +159,14 @@
 			name="permissionOption1" type="checkbox" value="276" />机构修改 </label> <label><input
 			name="permissionOption1" type="checkbox" value="277" />机构删除 </label> <br>
 		<br> <br>
+		
+		<br>  <span style="font-weight: bold;">培训管理：</span> <label><input
+			name="permissionOption1" type="checkbox" value="405" />培训新增 </label> <label><input
+			name="permissionOption1" type="checkbox" value="406" />培训删除 </label><br>
+			
+			<br>  <span style="font-weight: bold;">培训考核管理：</span> <label><input
+			name="permissionOption1" type="checkbox" value="408" />培训考核新增 </label> <label><input
+			name="permissionOption1" type="checkbox" value="409" />培训考核删除 </label><br>
 	</form>
 	<br><br>
 	<div style="padding:5px">

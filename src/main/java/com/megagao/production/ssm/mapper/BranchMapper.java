@@ -11,9 +11,7 @@ public interface BranchMapper {
 	
 	int add(Branch branch);
 	
-	int deleteBatch(String[] ids);
-	
-	Branch selectByPrimaryKey(String id);
+	int deleteBatch(String[] ids);	
 
 	int updateByPrimaryKeySelective(Branch branch);
 

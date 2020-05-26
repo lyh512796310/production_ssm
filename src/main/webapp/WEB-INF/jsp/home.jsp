@@ -155,38 +155,93 @@
 					</ul>
 				</li>
 			</ul>
-		</div>
-		
-		
-				
-		<div title="新增模块" data-options="selected:true" style="padding:10px">
+		</div>		
+			
+		<div title="机构模块" data-options="selected:true" style="padding:10px">
 			<ul id="newMonitor" class="easyui-tree"
 				data-options="animate:true,lines:true">
-				<li><span>新增模块</span>
+				<li><span>机构模块</span>
 					<ul>
 						<li id=63 data-options="attributes:{'url':'branch/find'}">机构管理</li>
 					</ul>
 				</li>
 			</ul>
 		</div>
-		
-		<div title="培训管理" data-options="selected:true" style="padding:10px">
-			<ul id="cultivateManager" class="easyui-tree"
+		<div title="培训模块" data-options="selected:true" style="padding:10px">
+			<ul id="trainMonitor" class="easyui-tree"
 				data-options="animate:true,lines:true">
-				<li><span>培训管理</span>
+				<li><span>培训模块</span>
 					<ul>
-						<li id=64 data-options="attributes:{'url':'cultivate/find'}">培训管理</li>
+						<li id=201 data-options="attributes:{'url':'train/find'}">培训管理</li>
 					</ul>
 					<ul>
-						<li id=65 data-options="attributes:{'url':'cultivate_exam/find'}">培训考核管理</li>
+						<li id=202 data-options="attributes:{'url':'assessment/find'}">培训考核管理</li>
 					</ul>
+				</li>
+			</ul>
+		</div>	
+		<div title="考试管理" data-options="selected:true" style="padding:10px">
+			<ul id="examManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考试管理</span>
+					<ul>
+						<li id=301 data-options="attributes:{'url':'exam/find'}">考试管理</li>
+					</ul>					
+				</li>
+			</ul>
+		</div>
+		<div title="薪酬管理" data-options="selected:true" style="padding:10px">
+			<ul id="salaryManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考核任务</span>
+					<ul>
+						<li id=401 data-options="attributes:{'url':'salary/find'}">薪酬管理</li>
+					</ul>					
+				</li>
+			</ul>
+		</div>
+		<div title="考核任务" data-options="selected:true" style="padding:10px">
+			<ul id="ataskManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考核任务</span>
+					<ul>
+						<li id=501 data-options="attributes:{'url':'atask/find'}">考核任务</li>
+					</ul>					
+				</li>
+			</ul>
+		</div>
+		<div title="自我评价" data-options="selected:true" style="padding:10px">
+			<ul id="selfManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考核任务</span>
+					<ul>
+						<li id=601 data-options="attributes:{'url':'self/find'}">考核任务</li>
+					</ul>					
+				</li>
+			</ul>
+		</div>
+		<div title="自我评价" data-options="selected:true" style="padding:10px">
+			<ul id="selfManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考核任务</span>
+					<ul>
+						<li id=601 data-options="attributes:{'url':'self/find'}">考核任务</li>
+					</ul>					
+				</li>
+			</ul>
+		</div>
+		<div title="绩效管理" data-options="selected:true" style="padding:10px">
+			<ul id="jobManager" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>绩效管理</span>
+					<ul>
+						<li id=701 data-options="attributes:{'url':'job/find'}">绩效管理</li>
+					</ul>					
 				</li>
 			</ul>
 		</div>
 		
-		
-		
-		
+	
 		<c:if test="${activeUser.rolename == '超级管理员' }">
 			<div title="系统管理" style="padding:10px;">
 	
@@ -221,7 +276,7 @@
 						["物料监控","物料信息","物料收入","物料消耗"],
 						["质量监控","不合格品管理","成品计量质检","成品计数质检","工序计量质检","工序计数质检"],
 						["人员监控","部门管理","员工管理"],
-						["机构管理"]
+						
 					  ];
 					  
 		function isContains(str, substr) {
@@ -340,11 +395,106 @@
 					}
 				}
 			});
-			
-			/* cultivate Manager Tree onClick Event */
-			$('#cultivateManager').tree({
+			//自我评价
+			$('#selfManager').tree({
 				onClick : function(node) {
-					if ($('#cultivateManager').tree("isLeaf", node.target)) {
+					/* debugger; */
+					if ($('#selfManager').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			/*培训管理  onClick Event */
+			$('#trainMonitor').tree({
+				onClick : function(node) {
+					if ($('#trainMonitor').tree("isLeaf", node.target)) {
+						var tabs1 = $("#tabs");
+						var tab1 = tabs1.tabs("getTab", node.text);
+						if (tab1) {
+							tabs1.tabs("select", node.text);
+						} else {
+							tabs1.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			/*绩效管理  onClick Event */
+			$('#jobManager').tree({
+				onClick : function(node) {
+					if ($('#jobManager').tree("isLeaf", node.target)) {
+						var tabs1 = $("#tabs");
+						var tab1 = tabs1.tabs("getTab", node.text);
+						if (tab1) {
+							tabs1.tabs("select", node.text);
+						} else {
+							tabs1.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			/*薪酬管理  onClick Event */
+			$('#salaryManager').tree({
+				onClick : function(node) {
+					if ($('#salaryManager').tree("isLeaf", node.target)) {
+						var tabs1 = $("#tabs");
+						var tab1 = tabs1.tabs("getTab", node.text);
+						if (tab1) {
+							tabs1.tabs("select", node.text);
+						} else {
+							tabs1.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			/*考核任务  onClick Event */
+			$('#ataskManager').tree({
+				onClick : function(node) {
+					if ($('#ataskManager').tree("isLeaf", node.target)) {
+						var tabs1 = $("#tabs");
+						var tab1 = tabs1.tabs("getTab", node.text);
+						if (tab1) {
+							tabs1.tabs("select", node.text);
+						} else {
+							tabs1.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			/*考试管理  onClick Event */
+			$('#examManager').tree({
+				onClick : function(node) {
+					if ($('#examManager').tree("isLeaf", node.target)) {
 						var tabs1 = $("#tabs");
 						var tab1 = tabs1.tabs("getTab", node.text);
 						if (tab1) {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.megagao.production.ssm.mapper.ExaminationMapper" >
+ 	<select id="find"  resultType="Examination">
+ 		select * from t_examination
+ 	</select>
+ 	
+ 	<select id="getExaminationById" resultType="Examination" parameterType="String">
+ 		select * from t_examination where id =#{id}
+ 	</select>
+ 	
+<!--  	<insert id="add" parameterType="Examination">  			
+  INSERT INTO `t_examination` 
+  (`id`, `title`, `teacher`, `create_time`, `over_time`, `address`, `type`, `file`, `lack_person`, `join_person`, `context`, `result`, `others`) 
+  VALUES (#{id}, #{title}, #{teacher}, #{create_time},#{over_time}, #{address},#{type},#{file},#{lack_person},#{join_person},#{context},#{result},#{others});
+  	</insert> -->
+  	
+<!--   		批量删除
+	<delete id="deleteBatch">
+		DELETE
+		FROM
+			t_examination
+		WHERE
+			id IN
+		<foreach collection="array" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete> -->
+	
+  
+</mapper>

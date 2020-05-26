@@ -152,11 +152,38 @@
 		<label><input name="permissionOption3" type="checkbox" value="211" />角色新增 </label> 
 		<label><input name="permissionOption3" type="checkbox" value="212" />角色修改 </label> 
 		<label><input name="permissionOption3" type="checkbox" value="213" />角色删除 </label> 
-		<br><br> <span style="font-weight: bold;">机构管理：</span> <label><input
-			name="permissionOption3" type="checkbox" value="275" />机构新增 </label> <label><input
-			name="permissionOption3" type="checkbox" value="276" />机构修改 </label> <label><input
-			name="permissionOption3" type="checkbox" value="277" />机构删除 </label> <br>
+		<br><br> <span style="font-weight: bold;">考试管理：</span> 
+		<label><input name="permissionOption3" type="checkbox" value="301" />考试新增 </label> 
+		<label><input	 name="permissionOption3" type="checkbox" value="302" />考试删除 </label> <br>
 		<br> <br>
+		<br><br> <span style="font-weight: bold;">机构管理：</span> 
+		<label><input name="permissionOption3" type="checkbox" value="275" />机构新增 </label> 
+		<label><input	 name="permissionOption3" type="checkbox" value="276" />机构修改 </label> 
+		<label><input	 name="permissionOption3" type="checkbox" value="277" />机构删除 </label>
+		<br><br> 
+		<span style="font-weight: bold;">考核任务管理：</span> 
+		<label><input name="permissionOption3" type="checkbox" value="502" />考核任务新增 </label> 
+		<label><input	 name="permissionOption3" type="checkbox" value="503" />考核任务删除 </label> <br>
+		<br> <br>
+		
+		<br>  <span style="font-weight: bold;">薪酬管理：</span> <label><input
+			name="permissionOption3" type="checkbox" value="402" />薪资新增 </label> <label><input
+			name="permissionOption3" type="checkbox" value="403" />薪酬删除 </label><br>
+			
+			<br>  <span style="font-weight: bold;">培训管理：</span> <label><input
+			name="permissionOption3" type="checkbox" value="405" />培训新增 </label> <label><input
+			name="permissionOption3" type="checkbox" value="406" />培训删除 </label><br>
+			
+			<br>  <span style="font-weight: bold;">培训考核管理：</span> <label><input
+			name="permissionOption3" type="checkbox" value="408" />培训考核新增 </label> <label><input
+			name="permissionOption3" type="checkbox" value="409" />培训考核删除 </label><br>
+			
+			<br>  <span style="font-weight: bold;">自我评价管理：</span> <label><input
+			name="permissionOption3" type="checkbox" value="601" />评价新增 </label> <label><br>
+			
+			<br>  <span style="font-weight: bold;">绩效管理：</span> <label><input
+			name="permissionOption3" type="checkbox" value="701" />绩效新增 </label> <label><input
+			name="permissionOption3" type="checkbox" value="702" />绩效删除 </label><br>
 	</form>
 	<br><br>
 	<div style="padding:5px">
