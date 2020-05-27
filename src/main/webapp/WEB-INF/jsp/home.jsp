@@ -63,7 +63,7 @@
 			<!---------------------------------------------------->
 		</div>
 
-		<div title="计划进度" data-options="selected:true" style="padding:10px;">
+		<!-- <div title="计划进度" data-options="selected:true" style="padding:10px;">
 			<ul id="scheduleMonitor" class="easyui-tree" data-options="animate:true,lines:true">
 				<li><span>计划进度</span>
 					<ul>
@@ -127,21 +127,7 @@
 			</ul>
 		</div>
 		
-		<div title="质量监控" data-options="selected:true" style="padding:10px;">
-			<ul id="qualifyMonitor" class="easyui-tree"
-				data-options="animate:true,lines:true">
-				<li><span>质量监控</span>
-					<ul>
-						<li id=51 data-options="attributes:{'url':'unqualify/find'}">不合格品管理</li>
-						<li id=52 data-options="attributes:{'url':'measure/find'}">成品计量质检</li>
-						<li id=53 data-options="attributes:{'url':'f_count_check/find'}">成品计数质检</li>
-						<li id=54 data-options="attributes:{'url':'p_measure_check/find'}">工序计量质检</li>
-						<li id=55 data-options="attributes:{'url':'p_count_check/find'}">工序计数质检</li>
-					</ul>
-				</li>
-			</ul>
-
-		</div>
+		
 		
 		<div title="人员监控" data-options="selected:true" style="padding:10px">
 			<ul id="employeeMonitor" class="easyui-tree"
@@ -155,7 +141,7 @@
 					</ul>
 				</li>
 			</ul>
-		</div>		
+		</div>		 -->
 			
 		<div title="机构模块" data-options="selected:true" style="padding:10px">
 			<ul id="newMonitor" class="easyui-tree"
@@ -176,6 +162,26 @@
 					</ul>
 					<ul>
 						<li id=202 data-options="attributes:{'url':'assessment/find'}">培训考核管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>	
+		<div title="人事调用" data-options="selected:true" style="padding:10px">
+			<ul id="personRegister" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>调职申请单</span>
+					<ul>
+						<li id=53 data-options="attributes:{'url':'f_count_check/find'}">调职申请单</li>
+					</ul>
+				</li>
+				<li><span>离职申请单</span>
+					<ul>
+						<li id=54 data-options="attributes:{'url':'p_measure_check/find'}">离职申请单</li>
+					</ul>
+				</li>
+				<li><span>调职通知单</span>
+					<ul>
+							<li id=55 data-options="attributes:{'url':'p_count_check/find'}">调职通知单</li>	
 					</ul>
 				</li>
 			</ul>
@@ -220,16 +226,6 @@
 				</li>
 			</ul>
 		</div>
-		<div title="自我评价" data-options="selected:true" style="padding:10px">
-			<ul id="selfManager" class="easyui-tree"
-				data-options="animate:true,lines:true">
-				<li><span>考核任务</span>
-					<ul>
-						<li id=601 data-options="attributes:{'url':'self/find'}">考核任务</li>
-					</ul>					
-				</li>
-			</ul>
-		</div>
 		<div title="绩效管理" data-options="selected:true" style="padding:10px">
 			<ul id="jobManager" class="easyui-tree"
 				data-options="animate:true,lines:true">
@@ -240,7 +236,40 @@
 				</li>
 			</ul>
 		</div>
-		
+		<div title="质量管理" data-options="selected:true" style="padding:10px;">
+			<ul id="qualifyMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>质量管理</span>
+					<ul>
+						<li id=51 data-options="attributes:{'url':'unqualify/find'}">基本设置</li>					
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div title="质检申请" data-options="selected:true" style="padding:10px;">
+			<ul id="qualifyApplication" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>质检申请</span>
+					<ul>
+						<li id=52 data-options="attributes:{'url':'measure/find'}">成品计量质检</li>
+						
+						
+									
+					</ul>
+					</li>
+			</ul>
+		</div>
+		<div title="质检报告" data-options="selected:true" style="padding:10px;">
+			<ul id="qualifyReport" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>质检报告</span>
+					<ul>
+						<li id=51 data-options="attributes:{'url':'unqualify/find'}">不合格产品</li>					
+					</ul>
+				</li>
+			</ul>
+		</div>
+	
 	
 		<c:if test="${activeUser.rolename == '超级管理员' }">
 			<div title="系统管理" style="padding:10px;">
@@ -380,6 +409,66 @@
 				onClick : function(node) {
 					/* debugger; */
 					if ($('#newMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			//质检报告
+			$('#personRegister').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#personRegister').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			//质检报告
+			$('#qualifyReport').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#qualifyReport').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			//质检申请
+			$('#qualifyApplication').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#qualifyApplication').tree("isLeaf", node.target)) {
 						var tabs2 = $("#tabs");
 						var tab2 = tabs2.tabs("getTab", node.text);
 						if (tab2) {

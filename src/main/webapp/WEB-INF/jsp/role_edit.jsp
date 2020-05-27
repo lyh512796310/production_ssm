@@ -16,9 +16,9 @@
 			<option value="1">有效</option>
 			<option value="2">锁定</option>
 		</select><br><br>
-        <span >权限:</span><br><br>
+         <span >权限:</span><br><br>
         <input type="hidden" name="permission" />
-        <span style="font-weight: bold;">订单管理：</span>
+      <!--  <span style="font-weight: bold;">订单管理：</span>
 		<label><input name="permissionOption1" type="checkbox" value="11" />订单新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="12" />订单修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="13" />订单删除 </label> 
@@ -82,33 +82,33 @@
 		<label><input name="permissionOption1" type="checkbox" value="221" />物料消耗新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="222" />物料消耗修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="223" />物料消耗删除 </label> 
-		<br><br>
-		<span style="font-weight: bold;">成品计数质检：</span>
-		<label><input name="permissionOption1" type="checkbox" value="131" />成品计数质检新增 </label> 
-		<label><input name="permissionOption1" type="checkbox" value="132" />成品计数质检修改 </label> 
-		<label><input name="permissionOption1" type="checkbox" value="133" />成品计数质检删除 </label>  
+		<br><br> -->
+		<span style="font-weight: bold;">调职申请单：</span>
+		<label><input name="permissionOption1" type="checkbox" value="131" />调职申请单新增 </label> 
+		<label><input name="permissionOption1" type="checkbox" value="132" />调职申请单修改 </label> 
+		<label><input name="permissionOption1" type="checkbox" value="133" />调职申请单删除 </label>  
 		<br><br>
 		<span style="font-weight: bold;">成品计量质检：</span>
 		<label><input name="permissionOption1" type="checkbox" value="141" />成品计量质检新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="142" />成品计量质检修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="143" />成品计量质检删除 </label> 
 		<br><br>
-		<span style="font-weight: bold;">工序计数质检：</span>
-		<label><input name="permissionOption1" type="checkbox" value="151" />工序计数质检新增 </label> 
-		<label><input name="permissionOption1" type="checkbox" value="152" />工序计数质检修改 </label> 
-		<label><input name="permissionOption1" type="checkbox" value="153" />工序计数质检删除 </label>  
+		<span style="font-weight: bold;">调职通知单：</span>
+		<label><input name="permissionOption1" type="checkbox" value="151" />调职通知单新增 </label> 
+		<label><input name="permissionOption1" type="checkbox" value="152" />调职通知单修改 </label> 
+		<label><input name="permissionOption1" type="checkbox" value="153" />调职通知单删除 </label>  
 		<br><br>
-		<span style="font-weight: bold;">工序计量质检：</span>
-		<label><input name="permissionOption1" type="checkbox" value="161" />工序计量质检新增 </label> 
-		<label><input name="permissionOption1" type="checkbox" value="162" />工序计量质检修改 </label> 
-		<label><input name="permissionOption1" type="checkbox" value="163" />工序计量质检删除 </label>
+		<span style="font-weight: bold;">离职申请单：</span>
+		<label><input name="permissionOption1" type="checkbox" value="161" />离职申请单新增 </label> 
+		<label><input name="permissionOption1" type="checkbox" value="162" />离职申请单修改 </label> 
+		<label><input name="permissionOption1" type="checkbox" value="163" />离职申请单删除 </label>
 		<br><br>
 		<span style="font-weight: bold;">不合格品申请：</span>
 		<label><input name="permissionOption1" type="checkbox" value="171" />不合格品申请新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="172" />不合格品申请修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="173" />不合格品申请删除 </label>  
 		<br><br>
-		<span style="font-weight: bold;">设备台账管理：</span>
+		<!-- <span style="font-weight: bold;">设备台账管理：</span>
 		<label><input name="permissionOption1" type="checkbox" value="231" />设备台账新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="232" />设备台账修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="233" />设备台账删除 </label> 
@@ -132,7 +132,7 @@
 		<label><input name="permissionOption1" type="checkbox" value="261" />设备维修新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="262" />设备维修修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="263" />设备维修删除 </label> 
-		<br><br>
+		<br><br> -->
 		<span style="font-weight: bold;">部门管理：</span>
 		<label><input name="permissionOption1" type="checkbox" value="41" />部门新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="42" />部门修改 </label> 
